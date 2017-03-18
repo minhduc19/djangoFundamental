@@ -11,11 +11,11 @@ def index(request):
 
 def item_detail(request,id):
 	try:
-		items = Item.objects.get(id=id)
+		item = Item.objects.get(id=id)
 	except Item.DoesNotExist:
 		raise Http404('Item does not exist')
 	return render(request, 'inventory/item_detail.html/',{
-		'items': items
+		'item': item
 		})
 
 	
